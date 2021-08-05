@@ -1,0 +1,59 @@
+input CreateCustomerInput {
+  id: Int!
+  name: String!
+  phone: String
+}
+
+type Customer {
+  id: Int!
+  name: String!
+  phone: String
+}
+
+input UpdateCustomerInput {
+  id: Int!
+  name: String
+  phone: String
+}
+
+input CreateItemInput {
+  id: Int!
+  customerId: Int!
+}
+
+type Item {
+  id: Int!
+  customerId: Int!
+}
+
+input UpdateItemInput {
+  id: Int!
+  customerId: Int
+}
+
+type Mutation {
+  deleteCustomer(id: Int!): Customer
+  createCustomer(createCustomerInput: CreateCustomerInput!): Customer
+  updateCustomer(updateCustomerInput: UpdateCustomerInput!): Customer
+  deleteItem(id: Int!): Item
+  createItem(createItemInput: CreateItemInput!): Item
+  updateItem(updateItemInput: UpdateItemInput!): Item
+}
+
+type Query {
+  getCustomer(id: Int!): Customer
+  listCustomers: [Customer]
+  getItem(id: Int!): Item
+  listItems: [Item]
+}
+
+type Subscription {
+  onCreateCustomer: Customer @aws_subscribe(mutations: ["createCustomer"])
+  onCreateItem: Item @aws_subscribe(mutations: ["createItem"])
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
