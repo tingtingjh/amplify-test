@@ -2,18 +2,21 @@ input CreateCustomerInput {
   id: Int!
   name: String!
   phone: String
+  email: String!
 }
 
 type Customer {
   id: Int!
   name: String!
   phone: String
+  email: String!
 }
 
 input UpdateCustomerInput {
   id: Int!
   name: String
   phone: String
+  email: String
 }
 
 input CreateItemInput {

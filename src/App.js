@@ -4,8 +4,8 @@ import { API, graphqlOperation } from 'aws-amplify'
 import { createCustomer} from './graphql/mutations'
 import { listCustomers } from './graphql/queries'
 
-// const initialState = { name: '', phone: '', email: ''}
-const initialState = { name: '', phone: ''}
+const initialState = { name: '', phone: '', email: ''}
+//const initialState = { name: '', phone: ''}
 let id_count = 0
 
 const App = () => {
@@ -56,19 +56,19 @@ const App = () => {
         value={formState.phone}
         placeholder="Phone"
       />
-      {/* <input
+      <input
         onChange={event => setInput('email', event.target.value)}
         style={styles.input}
         value={formState.email}
         placeholder="Email"
-      /> */}
+      />
       <button style={styles.button} onClick={addCustomer}>Create Customer</button>
       {
         customers.map((customer, index) => (
           <div key={customer.id ? customer.id : index} style={styles.customer}>
             <p style={styles.customerName}>{customer.name}</p>
             <p style={styles.p}>{customer.phone}</p>
-            {/* <p style={styles.p}>{customer.email}</p> */}
+            <p style={styles.p}>{customer.email}</p>
           </div>
         ))
       }

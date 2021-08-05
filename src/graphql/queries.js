@@ -7,6 +7,7 @@ export const getCustomer = /* GraphQL */ `
       id
       name
       phone
+      email
     }
   }
 `;
@@ -16,6 +17,7 @@ export const listCustomers = /* GraphQL */ `
       id
       name
       phone
+      email
     }
   }
 `;

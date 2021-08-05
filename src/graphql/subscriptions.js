@@ -7,6 +7,7 @@ export const onCreateCustomer = /* GraphQL */ `
       id
       name
       phone
+      email
     }
   }
 `;

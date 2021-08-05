@@ -7,6 +7,7 @@ export const deleteCustomer = /* GraphQL */ `
       id
       name
       phone
+      email
     }
   }
 `;
@@ -16,6 +17,7 @@ export const createCustomer = /* GraphQL */ `
       id
       name
       phone
+      email
     }
   }
 `;
@@ -25,6 +27,7 @@ export const updateCustomer = /* GraphQL */ `
       id
       name
       phone
+      email
     }
   }
 `;
